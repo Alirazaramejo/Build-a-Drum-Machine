@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>A Drum Machine</title>
+    
+    <script>
+      function play(str) {
+
+        if (str === "q" || str === "Q") {
+          document.getElementById('display').innerText = "Rock on!";
+        } else if (str === "w" || str === "W") {
+          document.getElementById('display').innerText = "Drum Roll!";
+        } else if (str === "e" || str === "E") {
+          document.getElementById('display').innerText = "Music Time!";
+        } else if (str === "a" || str === "A") {
+          document.getElementById('display').innerText = "Big Hit!";
+        } else if (str === "s" || str === "S") {
+          document.getElementById('display').innerText = "Party On!";
+        } else if (str === "d" || str === "D") {
+          document.getElementById('display').innerText = "Jamming on!";
+        } else if (str === "z" || str === "Z") {
+          document.getElementById('display').innerText = "Popstarts!";
+        } else if (str === "x" || str === "X") {
+          document.getElementById('display').innerText = "On the mood!";
+        } else if (str === "c" || str === "C") {
+          document.getElementById('display').innerText = "On the rythm!";
+        }
+        var audio = document.getElementById(str);
+        audio.play();
+      }
+
+      window.document.onkeyup = function(event) {
+        let keystroke = event.key
+        if (keystroke === "q" || keystroke === "Q") {
+          play("Q");
+        } else if (keystroke === "w" || keystroke === "W") {
+          play("W");
+        } else if (keystroke === "e" || keystroke === "E") {
+          play("E");
+        } else if (keystroke === "a" || keystroke === "A") {
+          play("A");
+        } else if (keystroke === "s" || keystroke === "S") {
+          play("S");
+        } else if (keystroke === "d" || keystroke === "D") {
+          play("D");
+        } else if (keystroke === "z" || keystroke === "Z") {
+          play("Z");
+        } else if (keystroke === "x" || keystroke === "X") {
+          play("X");
+        } else if (keystroke === "c" || keystroke === "C") {
+          play("C");
+        }
+      }
+    </script>
+  </head>
+
+
+  <body>
+    <div class="container" id="drum-machine">
+      <h1 class="text-center">A Drum Machine</h1>
+      <div class="card my-3">
+        <div class="card-body">
+          <div class="text-center" id="display">Click a button to play!</div>
+        </div>
+      </div>
+      <div class="align-items-center text-center">
+      <button class="drum-pad btn col-3 btn-dark" id="drum-0" onclick="play('Q')">
+        Q
+        <audio src="./assets/Q.mp3" class="clip" id="Q">
+      </button>
+      <button class="drum-pad btn col-3 btn-primary" id="drum-1" onclick="play('W')">
+        W
+        <audio src="./assets/W.mp3" class="clip" id="W">
+      </button>
+      <button class="drum-pad btn col-3 btn-dark" id="drum-2" onclick="play('E')">
+        E
+        <audio src="./assets/E.mp3" class="clip" id="E">
+      </button>
+      </div>
+      <br>
+
+      <div class="text-center">
+      <button class="drum-pad btn col-3 btn-primary" id="drum-3" onclick="play('A')">
+        A
+        <audio src="./assets/A.mp3" class="clip" id="A">
+      </button>
+      <button class="drum-pad btn col-3 btn-danger" id="drum-4" onclick="play('S')">
+        S
+        <audio src="./assets/S.mp3" class="clip" id="S">
+      </button>
+      <button class="drum-pad btn col-3 btn-primary" id="drum-5" onclick="play('D')">
+        D
+        <audio src="./assets/D.mp3" class="clip" id="D">
+      </button>
+      </div>
+      <br>
+
+      <div class="text-center">
+      <button class="drum-pad btn col-3 btn-dark" id="drum-6" onclick="play('Z')">
+        Z
+        <audio src="./assets/Z.mp3" class="clip" id="Z">
+      </button>
+      <button class="drum-pad btn col-3 btn-primary" id="drum-7" onclick="play('X')">
+        X
+        <audio src="./assets/X.mp3" class="clip" id="X">
+      </button>
+      <button class="drum-pad btn col-3 btn-dark" id="drum-8" onclick="play('C')">
+        C
+        <audio src="./assets/C.mp3" class="clip" id="C">
+      </button>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
